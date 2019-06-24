@@ -9,7 +9,9 @@
 output*
 *.iws
 venv
-*.pyc
+
 
 # Mac
 .DS_Store
+
+src/**/*pycache*/**/*.pyc
