@@ -8,7 +8,5 @@ def main():
     tx = Transaction()
 
 if __name__ == '__main__':
-    logger = get_logger()
-    print("Hello world")
+    print("HI")
     main()
-    print("Goodbye")
