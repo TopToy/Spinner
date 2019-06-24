@@ -9,6 +9,7 @@
 output*
 *.iws
 venv
+*.pyc
 
 # Mac
 .DS_Store
