@@ -6,5 +6,5 @@
 #pip install django
 #pip install djangorestframework
 
-protoc --proto_path=proto --python_out=src/proto proto/**/*.proto
-python -m grpc_tools.protoc --proto_path=proto --python_out=src/proto --grpc_python_out=src/proto proto/crpcs/*.proto
+protoc --proto_path=proto --python_out=src proto/**/*.proto
+python -m grpc_tools.protoc --proto_path=proto --python_out=src --grpc_python_out=src proto/crpcs/*.proto
