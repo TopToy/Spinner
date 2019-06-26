@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='spinnerTypes/client.proto',
   package='proto.types',
   syntax='proto3',
-  serialized_pb=_b('\n\x19spinnerTypes/client.proto\x12\x0bproto.types\x1a\x1espinnerTypes/transaction.proto\"0\n\x08TxStatus\x12$\n\x06status\x18\x01 \x01(\x0e\x32\x14.proto.types.TxState\"F\n\x05TxReq\x12\x1e\n\x03tid\x18\x01 \x01(\x0b\x32\x11.proto.types.TxID\x12\x10\n\x08\x62locking\x18\x02 \x01(\x08\x12\x0b\n\x03\x63id\x18\x03 \x01(\x05\"9\n\x08\x42lockReq\x12\x0e\n\x06height\x18\x01 \x01(\x05\x12\x10\n\x08\x62locking\x18\x02 \x01(\x08\x12\x0b\n\x03\x63id\x18\x03 \x01(\x05\"\x19\n\nValidators\x12\x0b\n\x03ips\x18\x01 \x03(\t\"\x80\x01\n\nConfigInfo\x12\x13\n\x0b\x63lusterSize\x18\x01 \x01(\x05\x12\x13\n\x0bmaxFailures\x18\x02 \x01(\x05\x12\x0f\n\x07workers\x18\x03 \x01(\x05\x12\x0f\n\x07initTmo\x18\x04 \x01(\x05\x12\x14\n\x0cmaxTxInBlock\x18\x05 \x01(\x05\x12\x10\n\x08serverID\x18\x06 \x01(\x05*@\n\x07TxState\x12\r\n\tCOMMITTED\x10\x00\x12\x0b\n\x07PENDING\x10\x01\x12\x0c\n\x08PROPOSED\x10\x02\x12\x0b\n\x07UNKNOWN\x10\x03\x42\r\n\x0bproto.typesb\x06proto3')
+  serialized_pb=_b('\n\x19spinnerTypes/client.proto\x12\x0bproto.types\x1a\x1espinnerTypes/transaction.proto\"0\n\x08TxStatus\x12$\n\x06status\x18\x01 \x01(\x0e\x32\x14.proto.types.TxState\"F\n\x05TxReq\x12\x1e\n\x03tid\x18\x01 \x01(\x0b\x32\x11.proto.types.TxID\x12\x10\n\x08\x62locking\x18\x02 \x01(\x08\x12\x0b\n\x03\x63id\x18\x03 \x01(\x05\"9\n\x08\x42lockReq\x12\x0e\n\x06height\x18\x01 \x01(\x05\x12\x10\n\x08\x62locking\x18\x02 \x01(\x08\x12\x0b\n\x03\x63id\x18\x03 \x01(\x05\"\x19\n\nValidators\x12\x0b\n\x03ips\x18\x01 \x03(\t\"\x80\x01\n\nConfigInfo\x12\x13\n\x0b\x63lusterSize\x18\x01 \x01(\x05\x12\x13\n\x0bmaxFailures\x18\x02 \x01(\x05\x12\x0f\n\x07workers\x18\x03 \x01(\x05\x12\x0f\n\x07initTmo\x18\x04 \x01(\x05\x12\x14\n\x0cmaxTxInBlock\x18\x05 \x01(\x05\x12\x10\n\x08serverID\x18\x06 \x01(\x05*@\n\x07TxState\x12\x0b\n\x07UNKNOWN\x10\x00\x12\r\n\tCOMMITTED\x10\x01\x12\x0b\n\x07PENDING\x10\x02\x12\x0c\n\x08PROPOSED\x10\x03\x42\r\n\x0bproto.typesb\x06proto3')
   ,
   dependencies=[spinnerTypes_dot_transaction__pb2.DESCRIPTOR,])
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
@@ -33,19 +33,19 @@ _TXSTATE = _descriptor.EnumDescriptor(
   file=DESCRIPTOR,
   values=[
     _descriptor.EnumValueDescriptor(
-      name='COMMITTED', index=0, number=0,
+      name='UNKNOWN', index=0, number=0,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='PENDING', index=1, number=1,
+      name='COMMITTED', index=1, number=1,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='PROPOSED', index=2, number=2,
+      name='PENDING', index=2, number=2,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='UNKNOWN', index=3, number=3,
+      name='PROPOSED', index=3, number=3,
       options=None,
       type=None),
   ],
@@ -57,10 +57,10 @@ _TXSTATE = _descriptor.EnumDescriptor(
 _sym_db.RegisterEnumDescriptor(_TXSTATE)
 
 TxState = enum_type_wrapper.EnumTypeWrapper(_TXSTATE)
-COMMITTED = 0
-PENDING = 1
-PROPOSED = 2
-UNKNOWN = 3
+UNKNOWN = 0
+COMMITTED = 1
+PENDING = 2
+PROPOSED = 3
 
 
 
