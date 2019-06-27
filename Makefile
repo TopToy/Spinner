@@ -1,8 +1,11 @@
 build:
 	./make_scripts/build.sh
 
+install:
+	./make_scripts/install.sh
+
 run:
-	python3.7 src/manage.py runserver
+	./make_scripts/run.sh
 
 
 
