@@ -10,13 +10,15 @@ urlpatterns = [
     path('state/pending_size', views.pending_size, name='pending_size'),
     path('state/validators', views.validators, name='validators'),
     path('state/info', views.info, name='info'),
-    path('transactions/<int:cid>&<int:worker>&<int:pid>&<int:bid>&<int:tx_num>&<int:blocking>',
+    path('transactions/cid=<int:cid>&worker=<int:worker>&pid=<int:pid>&'
+         'bid=<int:bid>&tx_num=<int:tx_num>&blocking=<int:blocking>',
          views.read_tx, name='read_tx'),
-    path('transactions/status/<int:cid>&<int:worker>&<int:pid>&<int:bid>&<int:tx_num>&<int:blocking>',
+    path('transactions/cid=<int:cid>&worker=<int:worker>&pid=<int:pid>&'
+         'bid=<int:bid>&tx_num=<int:tx_num>&blocking=<int:blocking>/status',
          views.tx_status, name='tx_status'),
-    path('transactions/write/<int:cid>',
+    path('transactions/write/cid=<int:cid>',
          views.write_tx, name='write_tx'),
-    path('blocks/<int:cid>&<int:height>&<int:blocking>',
+    path('blocks/cid=<int:cid>&height=<int:height>&blocking=<int:blocking>',
          views.read_block, name='read_block'),
 
 ]
