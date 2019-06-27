@@ -43,10 +43,7 @@ GET | `toptoy/state/pool_size` | None | Returns the number of transactions that 
 GET | `toptoy/state/pending_size` | None | Returns the number of transactions that have been proposed but not yet decided | Json
 GET | `toptoy/state/validators` | None | Returns a list of the validators IPs | Json
 GET | `toptoy/state/info` | None | Returns a general info about the TOP cluster deployment | Json
-GET | `transactions/cid=<clientID>&worker=<channel>&pid=<proposerID>&bid=<bid>&tx_num=<txNum>&blocking=blocking` | <ul><li>cid stands for the REST client ID</li><li>worker, pid, bid, and tx_num form a transaction ID and retrieved by submitting a transaction</li><li>blocking indicates weather to block the call id the transaction is not yet decided</li></ul> | Return the desired transaction | Json  
-
-
-
-  
-* `GET toptoy/` - Returns a general information on Spinner.
-* `GET toptoy/`
+GET | `transactions/cid=<clientID>&worker=<channel>&pid=<proposerID>&bid=<bid>&tx_num=<txNum>&blocking=blocking` | <ul><li>cid stands for the REST client ID</li><li>worker, pid, bid, and tx_num form a transaction ID and retrieved by submitting a transaction</li><li>blocking indicates weather to block the call id the transaction has not been decided yet</li></ul> | Return the desired transaction | Json  
+GET | `transactions/cid=<clientID>&worker=<channel>&pid=<proposerID>&bid=<bid>&tx_num=<txNum>/status` | <ul><li>cid stands for the REST client ID</li><li>worker, pid, bid, and tx_num form a transaction ID and retrieved by submitting a transaction</li></li></ul> | Return the transaction status (0 if unknown) | Json  
+GET | `blocks/cid=<clientID>&height=<height>&blocking=<blocking>` | <ul><li>cid stands for the REST client ID</li><li>height indicated the index of the block in the chain</li><li>blocking indicates weather to block the call id the block has not been decided yet</li> | Returns the desired block | Json
+POST | `transactions/cid=<clientID>/write` | <ul><li>cid stands for the requester ID</li><The body request contains the data in a string format</li></ul>| Submit a new transaction and returns the transaction ID | Json
