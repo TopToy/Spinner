@@ -3,12 +3,11 @@ from google.protobuf.json_format import MessageToDict
 from rest_framework.decorators import api_view
 from django.views.decorators.csrf import csrf_exempt
 
-
-from TTF.settings import TOPTOY_IP, TOPTOY_RPCS_PORT
 from rpcs.TTClient import TTClient
+from settings import TOPTOY_IP, TOPTOY_RPCS_PORT
 from spinnerTypes.client_pb2 import TxReq, BlockReq
-from spinnerTypes.transaction_pb2 import TxID, Transaction
-from spinnerTypes.utils_pb2 import Integer, Empty
+from spinnerTypes.transaction_pb2 import Transaction
+from spinnerTypes.utils_pb2 import Empty
 from utils.jsonUtils import add_missing
 
 rpcClient = TTClient(TOPTOY_IP, TOPTOY_RPCS_PORT)

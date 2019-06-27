@@ -119,5 +119,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-TOPTOY_IP = "127.0.0.1"
-TOPTOY_RPCS_PORT = 9876
+
