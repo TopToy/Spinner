@@ -47,13 +47,13 @@ def info(request):
     return JsonResponse(add_missing(ret, MessageToDict(ret)))
 
 
-def tx_status(request, cid, worker, pid, bid, tx_num, blocking):
+def tx_status(request, cid, worker, pid, bid, tx_num):
     req = TxReq()
     req.tid.channel = worker
     req.tid.proposerID = pid
     req.tid.bid = bid
     req.tid.txNum = tx_num
-    req.blocking = bool(blocking)
+    req.blocking = bool(0)
     req.cid = cid
     ret = rpcClient.get_stub().txStatus(req)
     return JsonResponse(add_missing(ret, MessageToDict(ret)))

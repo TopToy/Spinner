@@ -14,9 +14,9 @@ urlpatterns = [
          'bid=<int:bid>&tx_num=<int:tx_num>&blocking=<int:blocking>',
          views.read_tx, name='read_tx'),
     path('transactions/cid=<int:cid>&worker=<int:worker>&pid=<int:pid>&'
-         'bid=<int:bid>&tx_num=<int:tx_num>&blocking=<int:blocking>/status',
+         'bid=<int:bid>&tx_num=<int:tx_num>/status',
          views.tx_status, name='tx_status'),
-    path('transactions/write/cid=<int:cid>',
+    path('transactions/cid=<int:cid>/write',
          views.write_tx, name='write_tx'),
     path('blocks/cid=<int:cid>&height=<int:height>&blocking=<int:blocking>',
          views.read_block, name='read_block'),
