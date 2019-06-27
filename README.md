@@ -1,5 +1,5 @@
 # Spinner
-A front end RESTFul server for negotiating TopToy 
+A frontend RESTFul server for negotiating TopToy 
 
 ## Getting Started
 Spinner is supported only on an Ubuntu linux machine
