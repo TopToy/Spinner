@@ -4,13 +4,13 @@ from rest_framework.decorators import api_view
 from django.views.decorators.csrf import csrf_exempt
 
 from rpcs.TTClient import TTClient
-from settings import TOPTOY_IP, TOPTOY_RPCS_PORT
+from settings import CORE_RPCS_PORT, CORE_IP
 from spinnerTypes.client_pb2 import TxReq, BlockReq
 from spinnerTypes.transaction_pb2 import Transaction
 from spinnerTypes.utils_pb2 import Empty
 from utils.jsonUtils import add_missing
 
-rpcClient = TTClient(TOPTOY_IP, TOPTOY_RPCS_PORT)
+rpcClient = TTClient(CORE_IP, CORE_RPCS_PORT)
 
 
 def index(request):
