@@ -10,8 +10,8 @@ RUN mkdir -p ${SPINNER_HOME}
 VOLUME /tmp/Spinner
 
 ENV ID=0
-ENV SPINNER_IP="127.0.0.1"
-ENV SPINNER_PORT=8000
+ENV IP="127.0.0.1"
+ENV PORT=8000
 ENV CORE_IP="127.0.0.1"
 ENV CORE_PORT=9876
 
@@ -24,6 +24,6 @@ RUN  pip3 install protobuf \
 
 ENTRYPOINT sed -i 's/CORE_IP =.*/CORE_IP = '${CORE_IP}'/g' ${SPINNER_HOME}/settings.py \
             &&  sed -i 's/CORE_RPCS_PORT =.*/CORE_RPCS_PORT = '${CORE_PORT}'/g' ${SPINNER_HOME}/settings.py \
-            && python3 spinner/manage.py runserver ${SPINNER_IP}:${SPINNER_PORT}
+            && python3 spinner/manage.py runserver ${IP}:${PORT}
 
 STOPSIGNAL SIGTERM
