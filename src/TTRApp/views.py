@@ -71,6 +71,18 @@ def read_tx(request, cid, worker, pid, bid, tx_num, blocking):
     return JsonResponse(add_missing(ret, MessageToDict(ret)))
 
 
+def read_tx_data(request, cid, worker, pid, bid, tx_num, blocking):
+    req = TxReq()
+    req.tid.channel = worker
+    req.tid.proposerID = pid
+    req.tid.bid = bid
+    req.tid.txNum = tx_num
+    req.blocking = bool(blocking)
+    req.cid = cid
+    ret = rpcClient.get_stub().readTx(req)
+    return JsonResponse({'data': str(ret.data, 'utf-8')})
+
+
 def read_block(request, cid, height, blocking):
     req = BlockReq()
     req.height = height
