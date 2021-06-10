@@ -1,4 +1,4 @@
-Django==2.2.2
+Django==2.2.24
 grpcio==1.21.1
 protobuf==3.8.0
 grpc==0.3-19
